@@ -1,2 +1,2 @@
 # deep-learning-from-scratch
-「ゼロから作る Deep Learning」の写経
+ゼロから作る Deep Learningの写経
