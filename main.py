@@ -46,6 +46,15 @@ def predict(network, x):
 x, t = get_data()
 network = init_network()
 
+# shapeの確認
+W1, W2, W3 = network["W1"], network["W2"], network["W3"]
+
+print(x.shape)
+print(x[0].shape)
+print(W1.shape)
+print(W2.shape)
+print(W3.shape)
+
 accuracy_cnt = 0
 for i in range(len(x)):
     y = predict(network, x[i])
