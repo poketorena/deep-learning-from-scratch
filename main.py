@@ -1,13 +1,13 @@
 import numpy as np
 
-x = np.array([1, 2])
-print(x)
-print(x.shape)
+X = np.array([1.0, 0.5])
+W1 = np.array([[0.1, 0.3, 0.5], [0.2, 0.4, 0.6]])
+B1 = np.array([0.1, 0.2, 0.3])
 
-w = np.array([[1, 3, 5], [2, 4, 6]])
-print(w)
-print(w.shape)
+print(W1.shape)
+print(X.shape)
+print(B1.shape)
 
-y = np.dot(x, w)
-print(y)
-print(y.shape)
+A1 = np.dot(X, W1) + B1
+
+print(A1)
