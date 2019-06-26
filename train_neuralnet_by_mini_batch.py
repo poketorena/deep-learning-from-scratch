@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 from dataset.mnist import load_mnist
 from two_layer_net import TwoLayerNet
 
@@ -31,3 +32,10 @@ for i in range(iters_num):
     # 学習過程の記録
     loss = network.loss(x_batch, t_batch)
     train_loss_list.append(loss)
+
+# 損失の可視化
+x = range(1, 10001)
+plt.plot(x, train_loss_list)
+plt.xlabel("iteration")
+plt.ylabel("loss")
+plt.savefig("loss per iteration")

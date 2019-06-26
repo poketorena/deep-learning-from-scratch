@@ -70,27 +70,3 @@ class TwoLayerNet:
         grads["b2"] = numerical_gradient(loss_W, self.params["b2"])
 
         return grads
-
-
-# main program
-net = TwoLayerNet(input_size=784, hidden_size=100, output_size=10)
-print(net.params["W1"].shape)
-print(net.params["b1"].shape)
-print(net.params["W2"].shape)
-print(net.params["b2"].shape)
-
-# 推論処理
-# x = np.random.rand(100, 784)
-# y = net.predict(x)
-# print(y)
-
-x = np.random.rand(100, 784)  # ダミーデータの入力データ
-t = np.random.rand(100, 10)  # ダミーデータの正解ラベル
-
-grads = net.numerical_gradient(x, t)  # 勾配を計算
-
-print(grads["W1"].shape)
-print(grads["b1"].shape)
-print(grads["W2"].shape)
-print(grads["b2"].shape)
-print(grads)
