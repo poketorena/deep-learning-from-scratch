@@ -26,10 +26,26 @@ def numerical_gradient(f, x):
     return grad
 
 
-result1 = numerical_gradient(function_2, np.array([3.0, 4.0]))
-result2 = numerical_gradient(function_2, np.array([0.0, 2.0]))
-result3 = numerical_gradient(function_2, np.array([3.0, 0.0]))
+def gradient_descent(f, init_x, lr=0.01, step_num=100):
+    x = init_x
 
-print(result1)
-print(result2)
-print(result3)
+    for i in range(step_num):
+        grad = numerical_gradient(f, x)
+        x -= lr * grad
+
+    return x
+
+
+init_x = np.array([-3.0, 4.0])
+result = gradient_descent(function_2, init_x=init_x, lr=0.1, step_num=100)
+print(result)
+
+# 学習率が大きすぎる例
+init_x = np.array([-3.0, 4.0])
+result = gradient_descent(function_2, init_x=init_x, lr=10, step_num=100)
+print(result)
+
+# 学習率が小さすぎる例
+init_x = np.array([-3.0, 4.0])
+result = gradient_descent(function_2, init_x=init_x, lr=1e-10, step_num=100)
+print(result)
