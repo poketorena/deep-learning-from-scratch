@@ -22,8 +22,8 @@ for i in range(iters_num):
     t_batch = t_train[batch_mask]
 
     # 勾配の計算
-    grad = network.numerical_gradient(x_batch, t_batch)
-    # grad = network.gradient(x_batch, t_batch)  # 高速版！
+    # grad = network.numerical_gradient(x_batch, t_batch)
+    grad = network.gradient(x_batch, t_batch)  # 高速版！
 
     # パラメータの更新
     for key in ("W1", "b1", "W2", "b2"):
@@ -39,3 +39,4 @@ plt.plot(x, train_loss_list)
 plt.xlabel("iteration")
 plt.ylabel("loss")
 plt.savefig("loss_per_iteration_iter10000.png")
+plt.show()
