@@ -572,3 +572,4 @@ pyvenv.cfg
 pip-selfcheck.json
 
 # End of https://www.gitignore.io/api/pydev,flask,python,django,pycharm,jetbrains,pycharm+iml,pycharm+all,jetbrains+all,jetbrains+iml,jupyternotebook
+dataset/
